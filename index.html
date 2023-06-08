@@ -5,16 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lacquer&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-    <div id="user-score"></div>
-    <div id="comp-score"></div>
+    <main id="main-content">
+        <h1 id="title">Man vs Computer</h1>
+        <p class="desc animate" id="desc1">
+          Machines are threatening to take over the world...
+        </p>
+        <p class="desc disappear" id="desc2">
+          Unless you can defeat them in a game of rock paper scissors first to
+          5...
+        </p>
+        <p class="desc disappear" id="desc3">
+          Do you have what it takes to save mankind?
+        </p>
+        <p id="cta">Choose your weapon!</p>
+    
+    <div id="game-container">
+        <div id="score-label">
+            <p class="label">you</p>
+            <p class="label">computer</p>
+        </div>
+        <div id="score-container">
+            <div id="user-score">0</div>
+            <div id="comp-score">0</div>
+        </div>
+        <div id="btn-container">
+            <button id="rock" class="button">Rock</button>
+            <button id="paper" class="button">Paper</button>
+            <button id="scissors" class ="button">Scissors</button>
+        </div>
+
+    </div>
+
+    
     <div id="a1" class ="score-board"></div>
     <div id="a2" class ="result"><p></p></div>
+
     
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    </main>
     <button onclick="restartGame()">Restart Game</button>
 </body>
 <script src="script.js"></script>
