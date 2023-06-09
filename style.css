@@ -11,7 +11,7 @@ body {
 #score-label,
 #end-desc,
 #retry-btn {
-  font-family: lacquer, arial, sans-serif;
+  font-family: 'Gemunu Libre', sans-serif;
   text-align: center;
 }
 #title {
@@ -54,6 +54,14 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.you-label {
+  margin-left: 30px;
+}
+.computer-label {
+  margin-left: -15px;
+}
+
 .label {
   font-size: 30px;
   margin-top: 80px;
@@ -69,39 +77,62 @@ body {
   opacity: 0;
   transition: all 1s ease;
 }
-#end-alert {
+#end-alert{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.817);
+  z-index: 2;
+  cursor: pointer;
 }
 #end-desc {
-  font-size: 50px;
-  margin-bottom: 25px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 80px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 #retry-btn {
-  display: inline-block;
-  padding: 0.8em 1.4em;
-  border-radius: 0.15em;
+  /* border-radius: 0.15em;
   box-sizing: border-box;
-  text-decoration: none;
-  color: #646464;
+  text-decoration: none; */
+  color: #090909;
   background-color: rgb(245, 245, 245);
-  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
-  position: relative;
-  margin-top: 25px;
+  padding: 6px 8px;
+  position: absolute;
   opacity: 0;
+  margin-bottom: 100px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 2px;
 }
+
 #retry-btn:hover {
   cursor: pointer;
   filter: brightness(1.1);
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
 }
 #end-alert.disappear,
 .disappear {
   display: none;
 }
+
 #game-container {
   opacity: 0;
   pointer-events: none;
@@ -188,4 +219,51 @@ span {
 }
 span.skip {
   transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
+}
+
+@media (max-width: 600px) {
+  main {
+    flex-wrap: nowrap;
+  }
+
+  div {
+    flex-basis: 33%;
+  }
+
+#title,
+.desc,
+#cta,
+#score-container,
+#score-label,
+#end-desc,
+#retry-btn {
+  font-size: 1.5rem;
+  margin: 10%;
+}
+
+#score-label,
+#score-container {
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.you-label {
+  padding-right: 10px;
+}
+.computer-label {
+  margin-left: 10px;
+  padding-left: 60px;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  margin: 2px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
 }
