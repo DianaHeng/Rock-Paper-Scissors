@@ -189,8 +189,16 @@ function endGame() {
 }
 
 //Event Listeners
-function clickListener(event) {
-  const playerSelection = event.target.id;
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const img = button.querySelector("img");
+    playerSelection = img.alt;
+
+  });
+});
+
+function clickListener() {
   const computerSelection = getComputerChoice();
   playRound(playerSelection, computerSelection);
   console.log(` Player: ${playerSelection} vs Computer: ${computerSelection}`);
